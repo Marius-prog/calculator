@@ -9,7 +9,7 @@ def main():
 
 
 @app.route('/send', methods=['POST'])
-def send(sum=sum):
+def send():
     if request.method == 'POST':
         num1 = request.form['num1']
         num2 = request.form['num2']
@@ -17,7 +17,7 @@ def send(sum=sum):
     if operation == 'add':
         sum = float(num1) + float(num2)
         return render_template('index.html', sum=sum)
-    elif operation == 'subtraction':
+    elif operation == 'subtract':
         sum = float(num1) - float(num2)
         return render_template('index.html', sum=sum)
     elif operation == 'multiply':

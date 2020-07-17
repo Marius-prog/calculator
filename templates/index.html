@@ -2,12 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>calculator</title>
+    <title>Calculator</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
 </head>
 
 <body>
 
-<h1>Calculator</h1>
+<div class="container">
+    <h1>Calculator API</h1>
+</div>
+
 
 <div class="container">
     <form action="/send" method="POST">
@@ -18,7 +23,7 @@
                 class="u-full-width"
                 name="num1"
         />
-<br>
+
         <label for="Number Two">Second Number</label>
         <input
                 type="text"
@@ -26,7 +31,7 @@
                 class="u-full-width"
                 name="num2"
         />
-<br>
+
         <label for="Operation">Operation</label>
         <select class="u-full-width" name="operation">
             <option value="add">Add</option>
@@ -36,7 +41,7 @@
         </select>
 
         <input type="submit" value="Calculate" id="calc_btn"/>
-<br>
+
         <div class="alert">
             {{ sum }}
         </div>
