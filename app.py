@@ -57,6 +57,7 @@ def send():
 
         if not num1 or not num2:
             error_message = 'All Form Fields Required..'
+            flash('All Form Fields Required..')
             return render_template('page_not_found.html', error_message=error_message)
         elif num2 == 0:
             error_zero = 'Not aloud to divide by 0 !!'
