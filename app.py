@@ -82,8 +82,8 @@ def send():
         try:
             sum = float(num1) / float(num2)
         except ZeroDivisionError:
-            zero_message = 'Not aloud division by 0 !!'
-            flash('Not aloud division by 0 !!')
+            zero_message = 'Division by 0 not allowed !!'
+            flash('Division by 0 not allowed !!')
             return render_template('zero.html', zero_message=zero_message)
     return render_template('index.html', sum=sum, num1=num1, num2=num2, operation=operation)
 
