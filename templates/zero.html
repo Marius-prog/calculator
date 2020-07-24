@@ -14,21 +14,35 @@
         color: white;
         margin: 1rem;
       }
+      .error{
+    color: red
+}
+
+
     </style>
 </head>
 <body>
 <div class="container">
-<h1><strong>Error..</strong></h1>
-{{ zero_message }}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <div class="alert-{{category}}">Error: {{ message }}</div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
 </div>
 
 <div class="container">
-    <h6>Try again to calculate..</h6>
-</div>
+        <h6>Try again to calculate..</h6>
+    </div>
 
-<div>
-    {{ error_statement }}
-</div>
+<!--<div>-->
+<!--    {{ error_statement }}-->
+<!--</div>-->
 
 
 <div class="container">

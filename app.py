@@ -82,6 +82,7 @@ def send():
             sum = float(num1) / float(num2)
         except ZeroDivisionError:
             zero_message = 'Not aloud division by 0 !!'
+            flash('Not aloud division by 0 !!')
             return render_template('zero.html', zero_message=zero_message)
     return render_template('index.html', sum=sum, num1=num1, num2=num2, operation=operation)
 
@@ -144,11 +145,11 @@ def register():
     return render_template('register.html')
 
 
-@app.route('/logout', methods=['GET', 'POST'])
-@login_required
-def logout():
-    logout_user()
-    return redirect(url_for('hello_world'))
+# @app.route('/logout', methods=['GET', 'POST'])
+# @login_required
+# def logout():
+#     logout_user()
+#     return redirect(url_for('hello_world'))
 
 
 @app.after_request
