@@ -60,7 +60,7 @@ def send():
             flash('All Form Fields Required..')
             return render_template('page_not_found.html', error_message=error_message)
         elif num2 == 0:
-            error_zero = 'Not aloud to divide by 0 !!'
+            error_zero = 'Division by 0 not allowed !!'
             return render_template('zero.html', error_zero=error_zero)
 
     if operation == 'add':
