@@ -1,13 +1,10 @@
-from flask import Flask, render_template, request, make_response, redirect, flash, url_for, jsonify
+from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-from flask_login import LoginManager, UserMixin, login_required, logout_user
-import jwt
-from werkzeug.security import check_password_hash, generate_password_hash
+from flask_login import UserMixin
 
 app = Flask(__name__)
-# app.secret_key = 'some secret'
 app.config['SECRET_KEY'] = 'Th1s1ss3cr3t'
 app.config["DEBUG"] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///calculator.db'
@@ -24,6 +21,10 @@ class Users(db.Model, UserMixin):
         return '<Name %r>' % self.id
 
 
+users = []
+results = {}
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -31,8 +32,6 @@ def index():
 
 @app.route('/send', methods=['POST', 'GET'])
 def send():
-    users = []
-    results = {}
     if request.method == 'POST':
         name = request.form['name']
         num1 = request.form['num1']
