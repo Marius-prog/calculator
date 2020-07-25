@@ -21,14 +21,18 @@
 <body>
 
 <div class="container">
-    <h1>Calculator API</h1>
+    <h1>Calculator</h1>
 </div>
 
 <div>
     {{ error_statement }}
 </div>
 
-
+<div class="container">
+    <form action="/send" method="POST">
+    <label for="Name">Name</label>
+    <input type="text" placeholder="Your name" name="name" >
+</div>
 <div class="container">
     <form action="/send" method="POST">
         <label for="Number One">First Number</label>
@@ -61,8 +65,10 @@
 
         <div class="alert">
 <!--            <h4>{{ num1 }} {{ operation }} {{ num2 }}</h4>-->
-            <h6>answer is : {{ sum }}</h6>
+            <h6>{{ name }} answer is : {{ sum }}</h6>
         </div>
+
+
 
 </body>
 
