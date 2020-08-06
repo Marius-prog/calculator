@@ -11,21 +11,21 @@ def index():
     return render_template("app.html")
 
 
-@app.route("/first", methods="POST")
+@app.route("/first", methods=["POST"])
 def post_first_number():
     print("pirmas")
     number = request.form["number"]
     validate_number(number)
 
 
-@app.route("/second", methods="POST")
+@app.route("/second", methods=["POST"])
 def post_second_number():
     print("antras")
     number = request.form["number"]
     validate_number(number)
 
 
-@app.route("/operation", methods="POST")
+@app.route("/operation", methods=["POST"])
 def post_operation_number():
     print("operation")
     operation = request.form["operation"]
