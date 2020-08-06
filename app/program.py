@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 
-from commands import add, subtract, multiply, divide
-from validations import validate_number
+from app.commands import add, subtract, multiply, divide
+from app.validations import validate_number
 
 app = Flask(__name__)
 
